@@ -13,6 +13,7 @@ namespace SBAC
     public partial class FormCalculator : Form
     {
         String Expression;
+        int count = 0;
 
         public FormCalculator()
         {
@@ -23,11 +24,17 @@ namespace SBAC
         {
             if (ResultTextbox.Text != null && ResultTextbox.Text == "0")
             {
+                
                 ResultTextbox.Text = "1";
                 Button_0.Enabled = true;
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -46,6 +53,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -64,6 +76,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -82,6 +99,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -100,6 +122,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -118,6 +145,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -136,6 +168,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -155,6 +192,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -173,6 +215,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Button_0.Enabled = true;
                 Plus_Button.Enabled = true;
                 Subtraction_Button.Enabled = true;
@@ -191,6 +238,11 @@ namespace SBAC
             }
             else
             {
+                if (count == 1)
+                {
+                    ResultTextbox.Text = "";
+                    count = 0;
+                }
                 Plus_Button.Enabled = true;
                 ResultTextbox.Text += "0";
             }
@@ -263,6 +315,7 @@ namespace SBAC
 
         private void Equal_Button_Click(object sender, EventArgs e)
         {
+            count += 1;
             Console.WriteLine(ResultTextbox.Text);
             Expression = ResultTextbox.Text;
             String Result = Convert.ToString(InfixEvaluation.evaluate(Expression));
