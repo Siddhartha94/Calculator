@@ -1,0 +1,10 @@
+D:\C# Workspace\SBAC\SBAC\bin\Debug\SBAC.exe.config
+D:\C# Workspace\SBAC\SBAC\bin\Debug\SBAC.exe
+D:\C# Workspace\SBAC\SBAC\bin\Debug\SBAC.pdb
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.csprojAssemblyReference.cache
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.FormCalculator.resources
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.Properties.Resources.resources
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.csproj.GenerateResource.cache
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.csproj.CoreCompileInputs.cache
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.exe
+D:\C# Workspace\SBAC\SBAC\obj\Debug\SBAC.pdb
