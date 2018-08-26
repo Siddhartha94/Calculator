@@ -10,7 +10,7 @@ namespace SBAC
 {
     class InfixEvaluation
     {
-        public static int evaluate(String expression)
+        public static double evaluate(String expression)
         {
             char[] tokens = expression.ToCharArray();
 
@@ -33,7 +33,7 @@ namespace SBAC
                     // There may be more than one digits in number
                     while (i < tokens.Length && tokens[i] >= '0' && tokens[i] <= '9')
                         sbuf += tokens[i++];
-                    values.Push(Convert.ToInt32(sbuf));
+                    values.Push(Convert.ToDouble(sbuf));
                 }
 
                 // Current token is an opening brace, push it to 'ops'
@@ -45,7 +45,7 @@ namespace SBAC
                 {
                     while (ops.Peek().ToString() != '('.ToString())
                     {
-                        values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToInt32(values.Pop()), Convert.ToInt32(values.Pop())));
+                        values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToDouble(values.Pop()), Convert.ToDouble(values.Pop())));
                     }
                     ops.Pop();
 
@@ -59,7 +59,7 @@ namespace SBAC
                     // token, which is an operator. Apply operator on top of 'ops'
                     // to top two elements in values stack
                     while (!(ops.Count == 0) && hasPrecedence(tokens[i], Convert.ToChar(ops.Peek())))
-                        values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToInt32(values.Pop()), Convert.ToInt32(values.Pop())));
+                        values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToDouble(values.Pop()), Convert.ToDouble(values.Pop())));
 
                     // Push current token to 'ops'.
                     ops.Push(tokens[i]);
@@ -69,10 +69,10 @@ namespace SBAC
             // Entire expression has been parsed at this point, apply remaining
             // ops to remaining values
             while (!(ops.Count == 0))
-                values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToInt32(values.Pop()), Convert.ToInt32(values.Pop())));
+                values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToDouble(values.Pop()), Convert.ToDouble(values.Pop())));
 
             // Top of 'values' contains result, return it
-            return Convert.ToInt16(values.Pop());
+            return Convert.ToDouble(values.Pop());
         }
 
         // Returns true if 'op2' has higher or same precedence as 'op1',
@@ -89,7 +89,7 @@ namespace SBAC
 
         // A utility method to apply an operator 'op' on operands 'a' 
         // and 'b'. Return the result.
-        public static int applyOp(char op, int b, int a)
+        public static double applyOp(char op, double b, double a)
         {
             switch (op)
             {
