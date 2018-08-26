@@ -33,7 +33,7 @@ namespace SBAC
                     // There may be more than one digits in number
                     while (i < tokens.Length && tokens[i] >= '0' && tokens[i] <= '9')
                         sbuf += tokens[i++];
-                    values.Push(Convert.ToInt64(sbuf));
+                    values.Push(Convert.ToDouble(sbuf));
                 }
 
                 // Current token is an opening brace, push it to 'ops'
@@ -45,7 +45,7 @@ namespace SBAC
                 {
                     while (ops.Peek().ToString() != '('.ToString())
                     {
-                        values.Push(applyOp(Convert.ToChar(ops.Pop()),(int)values.Pop(), (int)values.Pop()));
+                        values.Push(applyOp(Convert.ToChar(ops.Pop()), Convert.ToDouble(values.Pop()), Convert.ToDouble(values.Pop())));
                     }
                     ops.Pop();
 
